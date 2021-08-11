@@ -1,0 +1,86 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+    color: white;
+}
+
+#site-wrap {
+    background-color: #181818;
+    height: 300vh;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 
+        1fr 
+        minmax(0, 1280px)
+        350px
+        1fr 
+    ;
+    grid-template-rows: 
+        55px
+        720px
+        110px
+        110px
+        1fr
+    ;
+    grid-template-areas:
+        "navbar navbar navbar navbar"
+        ". video-frame suggestions-bar ."
+        ". video-info suggestions-bar ."
+        ". description suggestions-bar ."
+        ". comment-section suggestions-bar ."
+    ;
+}
+
+#navbar {
+    grid-area: navbar;
+    background-color: blue;
+}
+
+#video-frame {
+    grid-area: video-frame;
+    background-color: red;
+}
+
+#video-info {
+    grid-area: video-info;
+    background-color: gray;
+}
+
+#description {
+    grid-area: description;
+    background-color: cyan;
+}
+
+#comment-section {
+    grid-area: comment-section;
+    background-color: orange;
+}
+
+#suggestions-bar {
+    grid-area: suggestions-bar;
+    background-color: green;
+}
+
+@media only screen and (max-width: 900px) {
+    #site-wrap {
+        gap: 0;
+        grid-template-columns: 
+            1fr 
+        ;
+        grid-template-rows: 
+            55px
+            720px
+            110px
+            110px
+            200px
+            1fr
+        ;
+        grid-template-areas:
+            "navbar"
+            "video-frame"
+            "video-info"
+            "description"
+            "suggestions-bar"
+            "comment-section"
+        ;
+    }
+}
